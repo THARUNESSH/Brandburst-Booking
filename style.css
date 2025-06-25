@@ -1,129 +1,103 @@
-/* Luxury Style for Brandburst Graphic */
-
- body {
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #111, #333);
+  color: white;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
-  color: #fff;
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
 .container {
+  margin-top: 60px;
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #222;
   width: 90%;
-  max-width: 450px;
-  background: rgba(20, 20, 20, 0.95);
-  border-radius: 15px;
-  padding: 30px 25px;
-  box-shadow: 0 0 30px rgba(255, 0, 128, 0.5), 0 0 10px rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
+  max-width: 400px;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-  color: #ff66b2;
-  text-shadow: 0 0 10px #ff66b2;
-}
-
-label {
+form input, form select, form button {
   display: block;
-  margin: 15px 0 5px;
-  font-weight: 600;
-}
-
-input,
-select {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  background-color: #2d2d2d;
-  color: #fff;
-  font-size: 15px;
-}
-
-input:focus,
-select:focus {
-  outline: none;
-  box-shadow: 0 0 10px #ff66b2;
-}
-
-button {
-  width: 100%;
-  margin-top: 20px;
+  margin: 10px 0;
   padding: 12px;
   font-size: 16px;
-  background: linear-gradient(135deg, #ff0080, #ff66b2);
-  color: #fff;
+  border-radius: 8px;
   border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
+  outline: none;
 }
 
-button:hover {
-  background: linear-gradient(135deg, #e60073, #ff3399);
+form input, form select {
+  background: #2b2b2b;
+  color: white;
+}
+
+form button {
+  background: gold;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 #message {
-  margin-top: 20px;
+  margin-top: 10px;
+  font-size: 14px;
   text-align: center;
-  font-weight: 600;
 }
-.chatbot {
+
+/* Chatbot */
+#chat-toggle {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 300px;
-  background-color: #222;
-  border: 2px solid #ff66b2;
-  border-radius: 15px;
-  font-size: 14px;
-  color: #fff;
-  box-shadow: 0 0 20px #ff66b2;
-  overflow: hidden;
+  background: gold;
+  color: black;
+  font-size: 22px;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#chatbot {
   display: none;
   flex-direction: column;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #111;
+  border: 1px solid #444;
+  border-radius: 10px;
+  width: 300px;
+  max-height: 400px;
+  overflow: hidden;
+  z-index: 1000;
 }
 
-.chat-header {
-  background: #ff66b2;
+#chatHeader {
+  background: gold;
+  color: black;
   padding: 10px;
-  text-align: center;
-  cursor: pointer;
   font-weight: bold;
-}
-
-.chat-body {
-  padding: 10px;
-  height: 200px;
-  overflow-y: auto;
-  background-color: #1a1a1a;
-}
-
-.chat-input {
   display: flex;
-  border-top: 1px solid #333;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.chat-input input {
-  flex: 1;
+#chatBody {
   padding: 10px;
-  border: none;
-  background: #2d2d2d;
-  color: white;
+  height: 250px;
+  overflow-y: auto;
+  font-size: 14px;
 }
 
-.chat-input button {
-  background: #ff66b2;
-  color: white;
+#chatbot input {
   border: none;
-  padding: 10px 15px;
-  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
 }
