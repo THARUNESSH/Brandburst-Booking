@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - Brandburst Bookings</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <h1>Admin Dashboard - Bookings</h1>
+    <table id="appointmentsTable">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Service</th>
+          <th>Date</th>
+          <th>Time Booked</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDP3sBGrtx9CsdOK-yzRBuNsLuqP3CIEiA",
+      authDomain: "brandburst-booking.firebaseapp.com",
+      projectId: "brandburst-booking",
+      storageBucket: "brandburst-booking.firebasestorage.app",
+      messagingSenderId: "347176846081",
+      appId: "1:347176846081:web:8e346178238b2cf93a1100",
+      measurementId: "G-CEDBTF5XZB"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script src="admin.js"></script>
+</body>
+</html>
