@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brandburst Booking</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Firebase SDKs -->
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-
-  <!-- Firebase config and init -->
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyDP3sBGrtx9CsdOK-yzRBuNsLuqP3CIEiA",
@@ -21,24 +19,23 @@
       appId: "1:347176846081:web:8e346178238b2cf93a1100",
       measurementId: "G-CEDBTF5XZB"
     };
-
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
   </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Book Your Appointment</h1>
+  <div class="form-container glide-in">
+    <h1>🚀 Book Your Service</h1>
     <form id="bookingForm">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="text" id="contact" placeholder="Contact Number" required>
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="contact" placeholder="Phone Number" required />
       <select id="service" required>
-        <option value="" disabled selected>Select Service</option>
+        <option disabled selected>Select Service</option>
         <option value="Laptop Repair">Laptop Repair</option>
         <option value="Graphic Design">Graphic Design</option>
       </select>
-      <input type="date" id="date" required>
+      <input type="date" id="date" required />
       <button type="submit">Book Now</button>
     </form>
     <div id="message"></div>
@@ -47,9 +44,9 @@
   <!-- Chatbot -->
   <div id="chat-toggle" onclick="toggleChat()">💬</div>
   <div id="chatbot">
-    <div id="chatHeader">Chat with us <span onclick="toggleChat()">✖️</span></div>
+    <div id="chatHeader">Need Help? <span onclick="toggleChat()">✖️</span></div>
     <div id="chatBody"></div>
-    <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter')sendMessage()">
+    <input type="text" id="userInput" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendMessage()"/>
   </div>
 
   <script src="script.js"></script>
