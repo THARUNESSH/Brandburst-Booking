@@ -2,26 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Admin - Brandburst Bookings</title>
+  <title>Brandburst Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="admin.css" />
-</head>
-<body>
-  <div class="admin-container">
-    <h1>Admin Dashboard - Bookings</h1>
-    <table id="appointmentsTable">
-      <thead>
-        <tr>
-          <th>Customer</th>
-          <th>Service</th>
-          <th>Date</th>
-          <th>Time Booked</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
 
-  <!-- Firebase SDKs -->
+  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
   <script>
@@ -29,7 +14,7 @@
       apiKey: "AIzaSyDP3sBGrtx9CsdOK-yzRBuNsLuqP3CIEiA",
       authDomain: "brandburst-booking.firebaseapp.com",
       projectId: "brandburst-booking",
-      storageBucket: "brandburst-booking.firebasestorage.app",
+      storageBucket: "brandburst-booking.appspot.com",
       messagingSenderId: "347176846081",
       appId: "1:347176846081:web:8e346178238b2cf93a1100",
       measurementId: "G-CEDBTF5XZB"
@@ -37,6 +22,27 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
   </script>
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Brandburst Appointments</h1>
+    <input type="text" id="searchInput" placeholder="Search by name or date (YYYY-MM-DD)" />
+    <table id="bookingTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Service</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Bookings will load here -->
+      </tbody>
+    </table>
+  </div>
+
   <script src="admin.js"></script>
 </body>
 </html>
