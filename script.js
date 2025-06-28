@@ -28,10 +28,11 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     });
 
     const address = "📍 7, Lengkok Kikik 7, Taman Inderawasih, 13600, Perai, Pulau Pinang";
+    message.innerHTML = `✅ Please come to this Location to provide your service`;
     message.innerHTML = `✅ Booking confirmed for ${date}!<br>${address}`;
 
     // WhatsApp confirmation
-    const phone = "60123456789";
+    const phone = "60124810802";
     const text = `Hi Brandburst, I just booked (ID: ${docRef.id}) for ${date} - ${service}. My name is ${name}, contact: ${contact}. Please note the address: ${address}`;
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
 
@@ -42,12 +43,13 @@ document.getElementById("bookingForm").addEventListener("submit", async function
   }
 });
 
-// Chatbot
+// Chatbot toggle
 function toggleChat() {
   const chat = document.getElementById("chatbot");
   chat.style.display = chat.style.display === "flex" ? "none" : "flex";
 }
 
+// Send chatbot message
 async function sendMessage() {
   const input = document.getElementById("userInput");
   const msg = input.value.trim();
@@ -59,7 +61,7 @@ async function sendMessage() {
   let reply = "Sorry, I didn’t understand. Try asking about services or dates.";
 
   if (msg.toLowerCase().includes("service")) {
-    reply = "We offer Laptop Repair and Graphic Design.";
+    reply = "We offer Laptop Repair,Android Phone Repair & Graphic Design.";
   } else if (msg.toLowerCase().includes("date") || msg.toLowerCase().includes("available")) {
     reply = await getAvailableDateReply();
   } else if (msg.toLowerCase().includes("hi") || msg.toLowerCase().includes("hello")) {

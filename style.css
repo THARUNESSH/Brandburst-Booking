@@ -109,11 +109,34 @@ button:hover {
   height: 250px;
   overflow-y: auto;
   font-size: 14px;
+  background: #0f0f0f;
 }
 
-#chatbot input {
-  border: none;
+/* Input & Send Button */
+#chatInputArea {
+  display: flex;
+}
+
+#chatInputArea input {
+  flex: 1;
   padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
+  border: none;
+  background: #1f1f1f;
+  color: #00ffee;
+  border-radius: 0 0 0 10px;
+}
+
+#sendBtn {
+  background: #00ffee;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 0 0 10px 0;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#sendBtn:hover {
+  background: #00ddcc;
 }

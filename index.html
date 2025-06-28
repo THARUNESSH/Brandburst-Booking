@@ -32,6 +32,7 @@
       <input type="text" id="contact" placeholder="Phone Number" required />
       <select id="service" required>
         <option disabled selected>Select Service</option>
+        <option value="Android Phone Repair">Android Phone Repair</option>
         <option value="Laptop Repair">Laptop Repair</option>
         <option value="Graphic Design">Graphic Design</option>
       </select>
@@ -46,7 +47,10 @@
   <div id="chatbot">
     <div id="chatHeader">Need Help? <span onclick="toggleChat()">✖️</span></div>
     <div id="chatBody"></div>
-    <input type="text" id="userInput" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendMessage()"/>
+    <div id="chatInputArea">
+      <input type="text" id="userInput" placeholder="Ask me anything..." />
+      <button id="sendBtn" onclick="sendMessage()">Send</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
