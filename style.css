@@ -1,100 +1,37 @@
-/* === General Styles === */
-body {
-  background: #0f0f0f;
-  font-family: 'Segoe UI', sans-serif;
-  color: #00ffee;
+#chatInputArea {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding: 40px 10px;
-  min-height: 100vh;
+  padding: 8px;
+  background: #0f0f0f;
 }
 
-h1 {
-  text-align: center;
-  color: #00ffee;
-  text-shadow: 0 0 8px #00ffee;
-}
-
-/* === Booking Form === */
-.form-container {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 25px #00ffee;
-  width: 90%;
-  max-width: 400px;
-  animation: glide 0.8s ease;
-}
-
-@keyframes glide {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-input, select, button {
-  width: 100%;
-  margin: 12px 0;
-  padding: 12px;
-  border-radius: 10px;
+#chatInputArea input {
+  flex: 1;
+  padding: 10px;
   border: none;
-  font-size: 16px;
   background: #1f1f1f;
   color: #00ffee;
-}
-
-button {
-  background: #00ffee;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #00bbaa;
-}
-
-#message {
-  margin-top: 10px;
-  color: yellow;
+  border-radius: 10px;
   font-size: 14px;
-  text-align: center;
+  margin-right: 5px;
 }
 
-/* === Chatbot Toggle Button === */
-#chat-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+#sendBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   background: #00ffee;
   color: black;
-  border-radius: 50%;
-  padding: 16px;
-  font-size: 20px;
+  font-weight: bold;
+  border: none;
   cursor: pointer;
-  z-index: 999;
-  box-shadow: 0 0 10px #00ffee;
+  font-size: 16px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* === Chatbot Box === */
-#chatbot {
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background: #111;
-  border-radius: 10px;
-  width: 300px;
-  max-height: 400px;
-  overflow: hidden;
-  z-index: 999;
-  box-shadow: 0 0 15px #00ff
+#sendBtn:hover {
+  background: #00ddcc;
+}
