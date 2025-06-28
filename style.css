@@ -1,3 +1,4 @@
+/* === General Styles === */
 body {
   background: #0f0f0f;
   font-family: 'Segoe UI', sans-serif;
@@ -7,6 +8,7 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 40px 10px;
+  min-height: 100vh;
 }
 
 h1 {
@@ -15,6 +17,7 @@ h1 {
   text-shadow: 0 0 8px #00ffee;
 }
 
+/* === Booking Form === */
 .form-container {
   background: rgba(0, 0, 0, 0.7);
   padding: 30px;
@@ -66,7 +69,7 @@ button:hover {
   text-align: center;
 }
 
-/* Chatbot */
+/* === Chatbot Toggle Button === */
 #chat-toggle {
   position: fixed;
   bottom: 20px;
@@ -78,8 +81,10 @@ button:hover {
   font-size: 20px;
   cursor: pointer;
   z-index: 999;
+  box-shadow: 0 0 10px #00ffee;
 }
 
+/* === Chatbot Box === */
 #chatbot {
   display: none;
   flex-direction: column;
@@ -92,51 +97,4 @@ button:hover {
   max-height: 400px;
   overflow: hidden;
   z-index: 999;
-  box-shadow: 0 0 15px #00ffee;
-}
-
-#chatHeader {
-  background: #00ffee;
-  color: black;
-  padding: 10px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-}
-
-#chatBody {
-  padding: 10px;
-  height: 250px;
-  overflow-y: auto;
-  font-size: 14px;
-  background: #0f0f0f;
-}
-
-/* Input & Send Button */
-#chatInputArea {
-  display: flex;
-}
-
-#chatInputArea input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  background: #1f1f1f;
-  color: #00ffee;
-  border-radius: 0 0 0 10px;
-}
-
-#sendBtn {
-  background: #00ffee;
-  color: black;
-  font-weight: bold;
-  border: none;
-  border-radius: 0 0 10px 0;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-#sendBtn:hover {
-  background: #00ddcc;
-}
+  box-shadow: 0 0 15px #00ff
