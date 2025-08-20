@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brandburst Booking</title>
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyDP3sBGrtx9CsdOK-yzRBuNsLuqP3CIEiA",
-      authDomain: "brandburst-booking.firebaseapp.com",
-      projectId: "brandburst-booking",
-      storageBucket: "brandburst-booking.appspot.com",
-      messagingSenderId: "347176846081",
-      appId: "1:347176846081:web:8e346178238b2cf93a1100",
-      measurementId: "G-CEDBTF5XZB"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-  </script>
+  <link rel="stylesheet" href="booking.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="form-container glide-in">
-    <h1>🚀 Book Your Service</h1>
-    <form id="bookingForm">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="text" id="contact" placeholder="Phone Number" required />
-      <select id="service" required>
-        <option disabled selected>Select Service</option>
-        <option value="Android Phone Repair">Android Phone Repair</option>
-        <option value="Laptop Repair">Laptop Repair</option>
-        <option value="Graphic Design">Graphic Design</option>
-      </select>
-      <input type="date" id="date" required />
-      <button type="submit">Book Now</button>
-    </form>
-    <div id="message"></div>
-  </div>
 
-  <!-- Chatbot -->
-  <div id="chat-toggle" onclick="toggleChat()">💬</div>
-  <div id="chatbot">
-    <div id="chatHeader">Need Help? <span onclick="toggleChat()">✖️</span></div>
-    <div id="chatBody"></div>
-    <div id="chatInputArea">
-  <input type="text" id="userInput" placeholder="Ask me anything..." />
-  <button id="sendBtn" onclick="sendMessage()">➤</button>
-</div>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Brandburst Graphic</div>
+    <p class="tagline">Fix. Design. Impress.</p>
+  </header>
 
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Book Your Service</h1>
+    <p>Fast, reliable & professional — Laptop Repair • Android Repair • Graphic Design</p>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- BOOKING FORM -->
+  <section class="form-section">
+    <div class="booking-card">
+      <h2>Confirm Your Appointment</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <select required>
+          <option value="">Choose Service</option>
+          <option>Laptop Repair</option>
+          <option>Android Phone Repair</option>
+          <option>Graphic Design</option>
+        </select>
+        <input type="date" required>
+        <input type="time" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <button type="submit">📅 Confirm Appointment</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact">
+    <h3>📍 Visit Us</h3>
+    <p>7, Lengkok Kikik 7,<br>
+       Taman Inderawasih,<br>
+       13600 Perai, Pulau Pinang</p>
+    <p>📞 012-4810802</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Brandburst Graphic | Powered by Tharunessh & Team</p>
+  </footer>
+
 </body>
 </html>
