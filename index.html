@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brandburst Booking</title>
+  <title>Brandburst Appointment Booking</title>
   <style>
     /* Designer: Tharunessh | Co-creators: Aaron Joshil Paul, Muhilan | SMK Taman Inderawasih */
 
@@ -22,7 +22,7 @@
       text-align: center;
 
       /* Background gradient */
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e) !important;
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
@@ -30,19 +30,13 @@
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
       padding: 2rem;
       border-radius: 15px;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
       max-width: 400px;
       width: 90%;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
     }
 
     h1 {
@@ -66,52 +60,10 @@
     }
 
     input, select {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.2);
       color: #fff;
     }
 
     input::placeholder {
       color: #ddd;
     }
-
-    button {
-      background: #00e6ff;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #00bcd4;
-    }
-
-    .address {
-      margin-top: 1.2rem;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Book Your Appointment</h1>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <select required>
-        <option value="">Select Service</option>
-        <option>Laptop Repair</option>
-        <option>Android Phone Repair</option>
-        <option>Graphic Design</option>
-      </select>
-      <input type="date" required>
-      <button type="submit">Book Now</button>
-    </form>
-    <div class="address">
-      📍 7, Lengkok Kikik 7, Taman Inderawasih,<br>
-      13600 Perai, Pulau Pinang
-    </div>
-  </div>
-</body>
-</html>
