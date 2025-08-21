@@ -5,133 +5,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brandburst Appointment Booking</title>
   <style>
-    /* Background */
-    body {
+    /* Reset */
+    * {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
       min-height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       color: white;
     }
 
-    .container {
+    .booking-container {
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      padding: 25px;
+      backdrop-filter: blur(12px);
       border-radius: 20px;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      animation: fadeIn 1s ease-in-out;
+      padding: 30px;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      animation: fadeIn 1s ease;
     }
 
-    h1 {
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
       text-align: center;
       margin-bottom: 20px;
-      font-size: 24px;
-      color: #ffce54;
+      font-size: 26px;
+      background: linear-gradient(90deg, #ff0080, #ff8c00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .form-group {
+      margin-bottom: 15px;
     }
 
-    input, select, button {
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
       padding: 12px;
       border: none;
       border-radius: 10px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
       font-size: 14px;
     }
 
-    input, select {
-      background: rgba(255,255,255,0.9);
-      color: #333;
+    input::placeholder, textarea::placeholder {
+      color: #ddd;
     }
 
     button {
-      background: linear-gradient(135deg, #ff512f, #dd2476);
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #ff0080, #ff8c00);
+      border: none;
+      border-radius: 12px;
       color: white;
+      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.2s;
+      transition: 0.3s;
     }
 
     button:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 15px #ff0080;
     }
 
-    .details {
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 12px;
-      background: rgba(0, 0, 0, 0.4);
+    .success-message {
       display: none;
-      animation: slideUp 0.5s ease;
-    }
-
-    .details h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #ffce54;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes slideUp {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      text-align: center;
+      margin-top: 20px;
+      color: #0f0;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Book Your Appointment</h1>
+  <div class="booking-container">
+    <h2>Book Your Appointment</h2>
     <form id="bookingForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="tel" id="phone" placeholder="Phone Number" required>
-      <select id="service" required>
-        <option value="">Select Service</option>
-        <option>Laptop Repair</option>
-        <option>Android Phone Repair</option>
-        <option>Graphic Design</option>
-      </select>
-      <input type="date" id="date" required>
-      <input type="time" id="time" required>
-      <button type="submit">Book Now</button>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="012-3456789" required>
+      </div>
+      <div class="form-group">
+        <label for="service">Select Service</label>
+        <select id="service" required>
+          <option value="">-- Choose Service --</option>
+          <option value="Laptop Repair">Laptop Repair</option>
+          <option value="Android Phone Repair">Android Phone Repair</option>
+          <option value="Graphic Design">Graphic Design</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Additional Notes</label>
+        <textarea id="message" rows="3" placeholder="Any special request?"></textarea>
+      </div>
+      <button type="submit">Book Appointment</button>
     </form>
-
-    <div class="details" id="details">
-      <h2>Booking Confirmed ✅</h2>
-      <p><b>Name:</b> <span id="dName"></span></p>
-      <p><b>Phone:</b> <span id="dPhone"></span></p>
-      <p><b>Service:</b> <span id="dService"></span></p>
-      <p><b>Date:</b> <span id="dDate"></span></p>
-      <p><b>Time:</b> <span id="dTime"></span></p>
-      <p><b>Address:</b> 7, Lengkok Kikik 7, Taman Inderawasih, 13600, Perai, Pulau Pinang</p>
-    </div>
+    <p class="success-message" id="successMessage">✅ Your booking has been submitted!</p>
   </div>
 
   <script>
     const form = document.getElementById("bookingForm");
-    const details = document.getElementById("details");
+    const successMessage = document.getElementById("successMessage");
 
-    form.addEventListener("submit", function(e){
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
-      document.getElementById("dName").innerText = document.getElementById("name").value;
-      document.getElementById("dPhone").innerText = document.getElementById("phone").value;
-      document.getElementById("dService").innerText = document.getElementById("service").value;
-      document.getElementById("dDate").innerText = document.getElementById("date").value;
-      document.getElementById("dTime").innerText = document.getElementById("time").value;
-
-      details.style.display = "block";
+      successMessage.style.display = "block";
       form.reset();
     });
   </script>
