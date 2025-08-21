@@ -5,65 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brandburst Appointment Booking</title>
   <style>
-    /* Designer: Tharunessh | Co-creators: Aaron Joshil Paul, Muhilan | SMK Taman Inderawasih */
-
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
+    /* Neon gradient background */
     body {
-      font-family: 'Poppins', sans-serif;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
+      color: white;
+    }
 
-      /* Background gradient */
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e) !important;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      color: #fff;
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-      max-width: 400px;
-      width: 90%;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-      color: #00e6ff;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    input, select, button {
-      margin: 0.6rem 0;
-      padding: 0.8rem;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-    }
-
-    input, select {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-    }
-
-    input::placeholder {
-      color: #ddd;
-    }
+      width: 90%
