@@ -4,56 +4,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brandburst Booking</title>
-  <link rel="stylesheet" href="booking.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Designer: Tharunessh | Co-creators: Aaron Joshil Paul, Muhilan | SMK Taman Inderawasih */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      /* Background gradient */
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2rem;
+      border-radius: 15px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      width: 90%;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      color: #00e6ff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select, button {
+      margin: 0.6rem 0;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    input, select {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: #ddd;
+    }
+
+    button {
+      background: #00e6ff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00bcd4;
+    }
+
+    .address {
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header>
-    <div class="logo">Brandburst Graphic</div>
-    <p class="tagline">Fix. Design. Impress.</p>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Book Your Service</h1>
-    <p>Fast, reliable & professional — Laptop Repair • Android Repair • Graphic Design</p>
-  </section>
-
-  <!-- BOOKING FORM -->
-  <section class="form-section">
-    <div class="booking-card">
-      <h2>Confirm Your Appointment</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <select required>
-          <option value="">Choose Service</option>
-          <option>Laptop Repair</option>
-          <option>Android Phone Repair</option>
-          <option>Graphic Design</option>
-        </select>
-        <input type="date" required>
-        <input type="time" required>
-        <input type="tel" placeholder="Phone Number" required>
-        <button type="submit">📅 Confirm Appointment</button>
-      </form>
+  <div class="container">
+    <h1>Book Your Appointment</h1>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <select required>
+        <option value="">Select Service</option>
+        <option>Laptop Repair</option>
+        <option>Android Phone Repair</option>
+        <option>Graphic Design</option>
+      </select>
+      <input type="date" required>
+      <button type="submit">Book Now</button>
+    </form>
+    <div class="address">
+      📍 7, Lengkok Kikik 7, Taman Inderawasih,<br>
+      13600 Perai, Pulau Pinang
     </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section class="contact">
-    <h3>📍 Visit Us</h3>
-    <p>7, Lengkok Kikik 7,<br>
-       Taman Inderawasih,<br>
-       13600 Perai, Pulau Pinang</p>
-    <p>📞 012-4810802</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Brandburst Graphic | Powered by Tharunessh & Team</p>
-  </footer>
-
+  </div>
 </body>
 </html>
