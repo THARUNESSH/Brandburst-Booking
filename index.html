@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brandburst Appointment Booking</title>
+  <title>Book Appointment</title>
   <style>
-    /* Reset */
+    /* Reset and fonts */
     * {
       margin: 0;
       padding: 0;
@@ -13,23 +13,176 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    /* Neon gradient background */
+    /* Neon Gradient Background */
     body {
-      min-height: 100vh;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      background-size: 400% 400%;
-      animation: gradientShift 12s ease infinite;
-      color: white;
+      overflow: hidden;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    /* Animated glowing background shapes */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,255,255,0.3) 0%, transparent 70%);
+      animation: float 6s infinite ease-in-out;
+    }
+    body::after {
+      background: radial-gradient(circle, rgba(255,0,255,0.3) 0%, transparent 70%);
+      width: 500px;
+      height: 500px;
+      right: -100px;
+      bottom: -150px;
+      animation-delay: 3s;
     }
 
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+
+    /* Container */
     .container {
-      width: 90%
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Headings */
+    .container h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    .container p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .input-group {
+      position: relative;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 12px 40px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      outline: none;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      border-color: #00ffff;
+      box-shadow: 0 0 10px #00ffff;
+    }
+
+    /* Input icons */
+    .input-group i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #00ffff;
+      font-size: 1.2rem;
+    }
+
+    /* Button */
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #00ffff, #0072ff);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00ffff;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #0072ff, #00ffff);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        width: 95%;
+        padding: 20px;
+      }
+      .container h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+  <!-- icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Book Appointment</h1>
+    <p>Fill in your details to confirm your booking</p>
+    <form>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Your Name" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-phone"></i>
+        <input type="tel" placeholder="Phone Number" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-calendar"></i>
+        <input type="date" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-clock"></i>
+        <input type="time" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-concierge-bell"></i>
+        <select required>
+          <option value="">Select Service</option>
+          <option>Laptop Repair</option>
+          <option>Android Phone Repair</option>
+          <option>Graphic Design</option>
+        </select>
+      </div>
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+</body>
+</html>
